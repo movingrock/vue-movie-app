@@ -51,7 +51,7 @@ export default {
   },
   // Search movies
   methods: {
-    async apply() {
+    apply() {
       this.$store.dispatch('movie/searchMovies', {
         title: this.title,
         type: this.type,
@@ -65,6 +65,8 @@ export default {
 
 
 <style lang="scss" scoped>
+@import "@/scss/main.scss";
+
 .container {
   display: flex;
 
@@ -96,5 +98,28 @@ export default {
     font-weight: 700;
     flex-shrink: 0;
   }
+
+  @include media-breakpoint-down(lg) {
+    display: block; // 수평에서 수직으로 바꿔줌.
+
+    input {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+
+    .selects {
+      margin-right: 0;
+      margin-bottom: 10px;
+
+      select {
+        width: 100%;
+      }
+    }
+
+    .btn {
+      width: 100%;
+    }
+  }
+
 }
 </style>
