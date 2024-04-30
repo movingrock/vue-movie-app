@@ -10,6 +10,9 @@ import envCompatible from 'vite-plugin-env-compatible'
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [vue(), envCompatible()],
+  build: {
+    target: 'esnext'
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
